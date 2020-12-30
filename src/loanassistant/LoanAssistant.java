@@ -18,7 +18,7 @@ public class LoanAssistant extends JFrame
 
 	public static void main(String[] args)
 	{
-		new LoanAssistant().show();
+		new LoanAssistant();
 	}
 	public LoanAssistant()
 	{
@@ -45,8 +45,8 @@ public class LoanAssistant extends JFrame
 		gridConstraints.insets=new Insets(10,10,0,0);
 		c.add(loanbalancelabel,gridConstraints);
 		
-		loanbalancetextfield=new JTextField();
-		loanbalancetextfield.setPreferredSize(new Dimension(100, 25));
+	    loanbalancetextfield=new JTextField();
+	    loanbalancetextfield.setPreferredSize(new Dimension(100, 25));
 	    loanbalancetextfield.setHorizontalAlignment(SwingConstants.RIGHT);
 	    loanbalancetextfield.setFont(myFont);
 	    gridConstraints = new GridBagConstraints();
@@ -63,8 +63,8 @@ public class LoanAssistant extends JFrame
 	    			}
 	    		});
 
-		interestratelabel=new JLabel("Interest Rate");
-		interestratelabel.setFont(myFont);
+	    interestratelabel=new JLabel("Interest Rate");
+	    interestratelabel.setFont(myFont);
 	    gridConstraints = new GridBagConstraints();
 	    gridConstraints.gridx=0;
 	    gridConstraints.gridy=1;
@@ -72,8 +72,8 @@ public class LoanAssistant extends JFrame
 	    gridConstraints.insets=new Insets(10,10,0,0);
 	    c.add(interestratelabel,gridConstraints);
 		
-		interestratetextfield=new JTextField();
-		interestratetextfield.setPreferredSize(new Dimension(100,25));
+	    interestratetextfield=new JTextField();
+	    interestratetextfield.setPreferredSize(new Dimension(100,25));
 	    interestratetextfield.setHorizontalAlignment(SwingConstants.RIGHT);
 	    interestratetextfield.setFont(myFont);
 	    gridConstraints = new GridBagConstraints();
@@ -89,7 +89,7 @@ public class LoanAssistant extends JFrame
 			}
 		});
 	    
-	    monthslabel=new JLabel("Number of Payment");
+	        monthslabel=new JLabel("Number of Payment");
 		monthslabel.setFont(myFont);
 		gridConstraints = new GridBagConstraints();
 		gridConstraints.gridx=0;
@@ -149,7 +149,7 @@ public class LoanAssistant extends JFrame
 		gridConstraints.insets=new Insets(10,0,0,0);
 		c.add(computebutton,gridConstraints);
 		
-        newloanbutton=new JButton("New Loan Analysis");
+                newloanbutton=new JButton("New Loan Analysis");
 		newloanbutton.setEnabled(false);
 		gridConstraints = new GridBagConstraints();
 		gridConstraints.gridx=0;
@@ -159,7 +159,7 @@ public class LoanAssistant extends JFrame
 		c.add(newloanbutton,gridConstraints);
 
 		computebutton.addActionListener(new ActionListener()
-	      {
+	        {
 			public void actionPerformed(ActionEvent ae)
 			{	
 				double balance,interest,payment;
@@ -267,11 +267,10 @@ public class LoanAssistant extends JFrame
 				newloanbutton.setEnabled(true);
 				newloanbutton.requestFocus();
 			}
-	      }
-			);
+	        });
 		
 		newloanbutton.addActionListener(new ActionListener()
-	      {
+	        {
 			public void actionPerformed(ActionEvent ae)
 			{	
 				//clear computed value and analysis
@@ -285,8 +284,7 @@ public class LoanAssistant extends JFrame
 				newloanbutton.setEnabled(false);
 				loanbalancetextfield.requestFocus();
 			}
-	      }
-			);
+	        });
 		
 		monthsbutton=new JButton("X");
 		monthsbutton.setFocusable(false);
@@ -297,7 +295,7 @@ public class LoanAssistant extends JFrame
 		c.add(monthsbutton,gridConstraints);
 		
 		monthsbutton.addActionListener(new ActionListener()
-	      {
+	        {
 			public void actionPerformed(ActionEvent ae)
 			{		
 				computepayment=false;
@@ -313,7 +311,7 @@ public class LoanAssistant extends JFrame
 				paymenttextfield.setFocusable(true);
 				loanbalancetextfield.requestFocus();
 			}
-	      });
+	        });
 		
 		paymentbutton=new JButton("X");
 		paymentbutton.setFocusable(false);
@@ -324,7 +322,7 @@ public class LoanAssistant extends JFrame
 		c.add(paymentbutton,gridConstraints);
 		
 		paymentbutton.addActionListener(new ActionListener()
-	      {
+	        {
 			public void actionPerformed(ActionEvent ae)
 			{	
 			//compute payment
@@ -341,8 +339,7 @@ public class LoanAssistant extends JFrame
 			paymenttextfield.setFocusable(false);
 			loanbalancetextfield.requestFocus();	
 			}
-	      }
-			);
+	        });
 		
 		analysislabel=new JLabel("Loan Analysis:");
 		analysislabel.setFont(myFont);
@@ -375,18 +372,18 @@ public class LoanAssistant extends JFrame
 		exitbutton.setFocusable(false);
 		
 		exitbutton.addActionListener(new ActionListener()
-	    {
+	        {
 			public void actionPerformed(ActionEvent ae)
 			{	
 				System.exit(0);	
 			}
-	    });
+	        });
 		pack();	
 	}
 
     public boolean validateDecimalNumber(JTextField tf)
     {
-    	   //check to see if textfield contain and validate decimal number with only digit a single decimal point
+    	        //check to see if textfield contain and validate decimal number with only digit a single decimal point
     		String s=tf.getText().trim();
     		boolean hasdecimal=false;
     		boolean valid=true;
